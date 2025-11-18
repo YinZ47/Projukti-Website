@@ -65,11 +65,11 @@ With steady effort and clear vision, Drishtikon continues to move from concept t
 
 #ProjuktiLipi #Drishtikon #Robotics #Innovation`,
     images: [
-      "https://media.licdn.com/dms/image/v2/D4D22AQHjqkearTuV3g/feedshare-shrink_2048_1536/B4DZkKIMVJHYAw-/0/1756811546601?e=1761782400&v=beta&t=Gc584mXT4cLbROf01sODpioKnGAnKpVh9mU0nkJ--T4",
-      "https://media.licdn.com/dms/image/v2/D4D22AQGH7g_LusGz5A/feedshare-shrink_2048_1536/B4DZkKIMVTIgAw-/0/1756811550332?e=1761782400&v=beta&t=vOFe0e1-kskCI0nDIP4T3g434nPCVc2KOlJF4g29sv8",
-      "https://media.licdn.com/dms/image/v2/D4D22AQGbi7X4ugEw2w/feedshare-shrink_1280/B4DZkKIMVjGQAs-/0/1756811546699?e=1761782400&v=beta&t=-10ZQvFWjJMxNmqNbTw9AFPCWCEr9IUMDnunBiZXX48",
-      "https://media.licdn.com/dms/image/v2/D4D22AQEbMFHQpKCShA/feedshare-shrink_1280/B4DZkKIMWaIYA0-/0/1756811546745?e=1761782400&v=beta&t=HLnIJcTy90-UxhtyDjKjmXjtJe2kTXc1G5ohOiQU1Vc",
-      "https://media.licdn.com/dms/image/v2/D4D22AQES0qJDS-ovyA/feedshare-shrink_2048_1536/B4DZkKIMVXIgAw-/0/1756811546483?e=1761782400&v=beta&t=RMi5s5ZyBln2K0ZGLYuQOm4pEPfosQ6MRtkHYZeHWjM",
+      "/images/timeline/2-0.jpeg",
+      "/images/timeline/2-1.jpeg",
+      "/images/timeline/2-2.jpeg",
+      "/images/timeline/2-3.jpeg",
+      "/images/timeline/2-4.jpeg",
     ],
   },
   {
@@ -89,10 +89,10 @@ Ahnaf Ashique Adi, Mahir Dyan, Sadman Labib Eram
 With passion, precision, and collaboration, Drishtikon is steadily moving from vision to reality.
 #ProjuktiLipi #Drishtikon #Robotics #Innovation`,
     images: [
-      "https://media.licdn.com/dms/image/v2/D5622AQHbBsFjviLt7w/feedshare-shrink_1280/B56ZkBE64GHQAs-/0/1756659693672?e=1761782400&v=beta&t=X3KR3DzX5I3_iLkOgI6OapvQxr629bnTLpAs8vEkrKs",
-      "https://media.licdn.com/dms/image/v2/D5622AQECkwouuqveKw/feedshare-shrink_2048_1536/B56ZkBE66tHAA8-/0/1756659694277?e=1761782400&v=beta&t=6VQecj-DaPuOAuSuGOGTlANfEegMQyJmnlh1HRx8btQ",
-      "https://media.licdn.com/dms/image/v2/D5622AQF-6Tx3uz76ew/feedshare-shrink_2048_1536/B56ZkBE648HAAw-/0/1756659694302?e=1761782400&v=beta&t=pdvLsFkXHM61Lw06dkyJxrGB936D2Sv1Eev0-RGTNrg",
-      "https://media.licdn.com/dms/image/v2/D5622AQHshIeq-tMBdQ/feedshare-shrink_2048_1536/B56ZkBE65MHUAw-/0/1756659694005?e=1761782400&v=beta&t=7dmGpRoxUT2asnOA6y4eH9j0Jw4P3_T5NHZpQvMDxfo",
+      "/images/timeline/3-0.jpeg",
+      "/images/timeline/3-1.jpeg",
+      "/images/timeline/3-2.jpeg",
+      "/images/timeline/3-3.jpeg",
       "https://media.licdn.com/dms/image/v2/D5622AQEnKnyruRjRBw/feedshare-shrink_1280/B56ZkBE641H8As-/0/1756659693951?e=1761782400&v=beta&t=Iz3sbVyXWuez-BtPDirtGtJVs-V7zQfA5PKq74-nwgw",
     ],
   },
