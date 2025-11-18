@@ -36,11 +36,11 @@
       "category": "SaaS"
     },
     {
-      "title": "VisionX",
-      "subtitle": "Industrial PPE Detection & Alert System",
-      "description": "AI-powered next-gen intelligent system blending safety, automation, and smart insights.",
-      "imageSrc": "/images/visionx-logo.png",
-      "progress": 5,
+      "title": "OculusX",
+      "subtitle": "Adaptive Real-Time AI Vision Platform",
+      "description": "Transforms raw visual data into intelligent, actionable insights using YOLOv8 architecture for workplace safety, traffic management, retail analytics, and logistics operations.",
+      "imageSrc": "/images/oculusx-logo.png",
+      "progress": 15,
       "category": "AI/ML"
     }
   ]

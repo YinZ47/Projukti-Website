@@ -1,9 +1,11 @@
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
     <footer className="border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 py-6">
         <p className="text-center text-sm text-muted-foreground font-mono">
-          © Projukti Lipi - 2025 | All rights reserved
+          © Projukti Lipi - {currentYear} | All rights reserved
         </p>
       </div>
     </footer>

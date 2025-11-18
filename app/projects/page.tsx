@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { CliNavbar } from "@/components/cli-navbar"
 import { ThreeBackground } from "@/components/three-background"
 import { LandingHero } from "@/components/landing-hero"
+import { PageTerminalIntro } from "@/components/page-terminal-intro"
 import { ExternalLink, Cpu, DollarSign, Package, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -42,6 +43,8 @@ const projectColors = [
 
 export default function ProjectsPage() {
   const [data, setData] = useState<ProjectData | null>(null)
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({})
+  const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
     fetch("/projukti-lipi-data.json")
@@ -60,10 +63,15 @@ export default function ProjectsPage() {
 
   return (
     <div className="relative min-h-screen scanlines">
+      <PageTerminalIntro 
+        commandText="ls -la" 
+        onComplete={() => setShowContent(true)}
+        skipKey="projects-intro-seen"
+      />
       <ThreeBackground />
       <CliNavbar />
 
-      <main className="relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-6xl">
+      <main className={`relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-6xl transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         {/* Terminal prompt */}
         <div className="mb-8 text-sm font-mono text-muted-foreground">
           <span className="text-primary font-semibold">student@projukti-lipi</span>
@@ -88,13 +96,14 @@ export default function ProjectsPage() {
                 className={`border-2 rounded-lg overflow-hidden bg-card shadow-md transition-all duration-300 group ${colorClass}`}
               >
                 {/* Project Image */}
-                <div className="relative h-56 bg-muted overflow-hidden flex items-center justify-center p-8 border-b border-border">
+                <div className="relative h-56 bg-muted dark:bg-white/95 overflow-hidden flex items-center justify-center p-8 border-b border-border">
                   <Image
-                    src={project.imageSrc || "/placeholder.svg"}
+                    src={imageErrors[index] ? "/placeholder.svg" : project.imageSrc}
                     alt={project.title}
                     width={300}
                     height={200}
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    onError={() => setImageErrors(prev => ({ ...prev, [index]: true }))}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card/50 via-transparent to-transparent pointer-events-none" />
 

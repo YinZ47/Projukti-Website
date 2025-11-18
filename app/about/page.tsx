@@ -1,11 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { CliNavbar } from "@/components/cli-navbar"
 import { ThreeBackground } from "@/components/three-background"
 import { LandingHero } from "@/components/landing-hero"
+import { PageTerminalIntro } from "@/components/page-terminal-intro"
 import { Lightbulb, Heart, Users, Target, Code, Bot, Rocket, BookOpen, Zap } from "lucide-react"
 
 export default function AboutPage() {
+  const [showContent, setShowContent] = useState(false)
   const features = [
     {
       icon: Users,
@@ -66,10 +69,15 @@ export default function AboutPage() {
 
   return (
     <div className="relative min-h-screen">
+      <PageTerminalIntro 
+        commandText="cat about.md" 
+        onComplete={() => setShowContent(true)}
+        skipKey="about-intro-seen"
+      />
       <ThreeBackground />
       <CliNavbar />
 
-      <main className="relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-6xl">
+      <main className={`relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-6xl transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         {/* Terminal prompt */}
         <div className="mb-8 text-sm text-muted-foreground">
           <span className="text-primary">student@projukti-lipi</span>

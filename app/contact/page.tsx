@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { CliNavbar } from "@/components/cli-navbar"
 import { ThreeBackground } from "@/components/three-background"
 import { LandingHero } from "@/components/landing-hero"
+import { PageTerminalIntro } from "@/components/page-terminal-intro"
 import { Mail, Linkedin, Send, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -16,6 +17,7 @@ interface ProjectData {
 
 export default function ContactPage() {
   const [data, setData] = useState<ProjectData | null>(null)
+  const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
     fetch("/projukti-lipi-data.json")
@@ -34,10 +36,15 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen">
+      <PageTerminalIntro 
+        commandText="./connect.sh" 
+        onComplete={() => setShowContent(true)}
+        skipKey="contact-intro-seen"
+      />
       <ThreeBackground />
       <CliNavbar />
 
-      <main className="relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-4xl">
+      <main className={`relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-4xl transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         {/* Terminal prompt */}
         <div className="mb-8 text-sm font-mono text-muted-foreground">
           <span className="text-primary font-semibold">student@projukti-lipi</span>
@@ -79,7 +86,7 @@ export default function ContactPage() {
                   <p className="text-sm text-muted-foreground mb-4">Connect with us</p>
                   <Button asChild variant="outline" className="font-mono w-full bg-transparent" size="sm">
                     <a
-                      href="https://www.linkedin.com/company/projukti-lipi/?fbclid=IwY2xjawNJ4nNleHRuA2FlbQIxMABicmlkETFEVVMyTm1pckMwTU82OGZHAR758JMnYu5TW02wEAP9d3b6sGZyJ4qaOW53563fklyQgEVqbOWBa78CqWDKUQ_aem_0aywKE2aa4yUHdbRTXXO-Q"
+                      href="https://www.linkedin.com/company/projukti-lipi/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

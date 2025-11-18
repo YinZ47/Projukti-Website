@@ -78,7 +78,7 @@ export default function HomePage() {
                   {/* Hero Section with Logo */}
                   <div className="border-l-4 border-primary pl-6 space-y-6">
                     <div className="flex items-center gap-6">
-                      <div className="relative w-24 h-24 flex-shrink-0">
+                      <div className="relative w-16 h-16 flex-shrink-0">
                         <Image
                           src="/images/projukti-lipi-logo.png"
                           alt="Projukti-Lipi Logo"

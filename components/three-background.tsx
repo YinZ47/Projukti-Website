@@ -55,8 +55,9 @@ export function ThreeBackground() {
 
       draw() {
         const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 3)
-        gradient.addColorStop(0, theme === "dark" ? "rgba(0, 255, 100, 0.6)" : "rgba(100, 150, 120, 0.5)")
-        gradient.addColorStop(1, "rgba(0, 255, 100, 0)")
+        gradient.addColorStop(0, theme === "dark" ? "rgba(0, 255, 255, 0.9)" : "rgba(100, 150, 120, 0.5)")
+        gradient.addColorStop(0.5, theme === "dark" ? "rgba(0, 255, 255, 0.4)" : "rgba(100, 150, 120, 0.3)")
+        gradient.addColorStop(1, "rgba(0, 255, 255, 0)")
 
         ctx.fillStyle = gradient
         ctx.beginPath()
@@ -82,7 +83,7 @@ export function ThreeBackground() {
 
       draw(t: number) {
         ctx.beginPath()
-        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 100, 0.15)" : "rgba(100, 150, 120, 0.2)"
+        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.25)" : "rgba(100, 150, 120, 0.2)"
         ctx.lineWidth = 2
 
         for (let x = 0; x < canvas.width; x += 5) {
@@ -146,7 +147,7 @@ export function ThreeBackground() {
         }
         ctx.closePath()
 
-        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 100, 0.1)" : "rgba(100, 150, 120, 0.15)"
+        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.15)"
         ctx.lineWidth = 1.5
         ctx.stroke()
 
@@ -176,7 +177,7 @@ export function ThreeBackground() {
       time += 0.01
 
       // Clear with fade effect
-      ctx.fillStyle = theme === "dark" ? "rgba(18, 18, 18, 0.05)" : "rgba(250, 248, 245, 0.05)"
+      ctx.fillStyle = theme === "dark" ? "rgba(13, 13, 13, 0.08)" : "rgba(250, 248, 245, 0.05)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Draw waves
@@ -195,7 +196,7 @@ export function ThreeBackground() {
       })
 
       // Draw connections between nearby orbs
-      ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 100, 0.08)" : "rgba(100, 150, 120, 0.1)"
+      ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.1)"
       ctx.lineWidth = 1
 
       for (let i = 0; i < orbs.length; i++) {
@@ -224,5 +225,5 @@ export function ThreeBackground() {
     }
   }, [theme])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-30" style={{ zIndex: 0 }} />
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-40" style={{ zIndex: 0 }} />
 }
