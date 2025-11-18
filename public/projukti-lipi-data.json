@@ -1,0 +1,47 @@
+{
+  "organization": {
+    "name": "Projukti-Lipi",
+    "tagline": "Where Ambition Meets Opportunity",
+    "email": "projuktilipi@gmail.com",
+    "mission": "Projukti-Lipi came as an initiative for all the students who had the ambition of striving for excellence not only in their academics but also in their co-curricular fields as well but were halted due to the Clubs/Initiatives taken by the University as they often tend to not be that beginner friendly and ends up stifling the Students who once had ambition and passion gleaming from their eyes.",
+    "vision": "For all those Students Projukti-Lipi was formed to guide such individuals, to nurture their talents and their ambitions and give them a safe place to stay. With our entirely Student led body and a completely students friendly work environment we as an organization prioritize growth, maturity and most of all hard work.",
+    "goal": "Our Goal as an organization is to push SaaS Software products out and make them as efficient and user friendly as possible while also pursuing excellence in the ever so growing field of Robotics.",
+    "values": ["Student-Led Innovation", "Beginner-Friendly Environment", "Growth & Maturity", "Hard Work & Excellence"]
+  },
+  "projects": [
+    {
+      "title": "DRISHTIKON",
+      "subtitle": "Bangladesh's First Fully Articulated Humanoid",
+      "description": "Drishtikon is a pioneering robotics endoskeleton designed to mimic human movement and vision with unparalleled realism.",
+      "imageSrc": "/images/drishtikon-logo.png",
+      "progress": 23,
+      "timelineUrl": "/timeline/drishtikon",
+      "category": "Robotics"
+    },
+    {
+      "title": "ARTHADARPAN",
+      "subtitle": "A Modern Financial Ledger System",
+      "description": "ARTHADARPAN empowers individuals and businesses with secure, effortless, and impactful financial management.",
+      "imageSrc": "/images/arthadarpan-logo.png",
+      "progress": 5,
+      "timelineUrl": "/timeline/arthadarpan",
+      "category": "SaaS"
+    },
+    {
+      "title": "StockSync",
+      "subtitle": "An efficient inventory management",
+      "description": "StockSync empowers businesses to stay ahead, minimize waste, and maintain reliability in every transaction.",
+      "imageSrc": "/images/stocksync-logo.png",
+      "progress": 5,
+      "category": "SaaS"
+    },
+    {
+      "title": "VisionX",
+      "subtitle": "Industrial PPE Detection & Alert System",
+      "description": "AI-powered next-gen intelligent system blending safety, automation, and smart insights.",
+      "imageSrc": "/images/visionx-logo.png",
+      "progress": 5,
+      "category": "AI/ML"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "owner": {
+    "name": "Ahnaf Ashique Adi",
+    "bio": "I am an undergraduate student at Brac University trying to learn.",
+    "roles": [
+      "Embedded System Engineer",
+      "Software Developer",
+      "Aspiring Researcher and Scientist",
+      "Solution Architect"
+    ],
+    "email": "ahnafashiqueadi@gmail.com",
+    "github": "https://github.com/Ahnaf-Ashique-Adi"
+  },
+  "projects": [
+    {
+      "name": "Task-Tracker-Cli",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/Task-Tracker-Cli",
+      "description": "A command-line task tracker implemented in Java.",
+      "languages": ["Java"],
+      "language_percent": { "Java": 100 }
+    },
+    {
+      "name": "NasaSpaceAppsChallenge2024",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/NasaSpaceAppsChallenge2024",
+      "description": "A project submitted for NASA Space Apps Challenge 2024 (C#).",
+      "languages": ["C#"],
+      "language_percent": { "C#": 100 },
+      "license": "MIT License",
+      "visibility": "public"
+    },
+    {
+      "name": "BUET-CSE-GAMEJAM-2024",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/BUET-CSE-GAMEJAM-2024",
+      "description": "Game Jam project primarily using ShaderLab, C#, and HLSL submitted for BUET CSE GAMEJAM and RANKED 29th.",
+      "languages": ["ShaderLab", "C#", "HLSL"],
+      "language_percent": { "ShaderLab": 67.7, "C#": 20.5, "HLSL": 11.8 },
+      "visibility": "public"
+    },
+    {
+      "name": "ARCUS-",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/ARCUS-",
+      "description": "Flight computer and its Thrust Vector Control System.",
+      "languages": ["HTML"],
+      "language_percent": { "HTML": 100 },
+      "visibility": "public"
+    },
+    {
+      "name": "by-te-cra-fts",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/by-te-cra-fts",
+      "description": "Hackintosh Documentation Website for Thinkpad T490",
+      "languages": ["TypeScript", "CSS", "JavaScript"],
+      "language_percent": { "TypeScript": 96.8, "CSS": 3.1, "JavaScript": 0.1 },
+      "homepage": "https://byte-crafts.vercel.app",
+      "visibility": "private"
+    },
+    {
+      "name": "byte-crafts-fix",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/byte-crafts-fix",
+      "description": "Hackintosh Documentation Website for Thinkpad T490 fixed",
+      "languages": ["TypeScript", "CSS", "JavaScript"],
+      "language_percent": { "TypeScript": 97.6, "CSS": 1.8, "JavaScript": 0.6 },
+      "visibility": "private"
+    },
+    {
+      "name": "Memento-Mortis_Demo_Build_1",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/Memento-Mortis_Demo_Build_1",
+      "description": "This is an Unreal horror game made by me using Blueprints and a little C++ for practice. Feel free to play the game and send me feedback.",
+      "languages": ["C++"],
+      "language_percent": { "C++": 100 },
+      "visibility": "public"
+    },
+    {
+      "name": "CypherCore",
+      "repo_url": "https://github.com/Ahnaf-Ashique-Adi/CypherCore",
+      "description": "Terminal-style cyberpunk hacking game built with Python + Pygame for Amazon Q CLI Game Challenge 2025.",
+      "languages": ["Python"],
+      "language_percent": { "Python": 100 },
+      "license": "MIT License",
+      "visibility": "public"
+    }
+  ]
+}
