@@ -2,12 +2,32 @@
 
 import { CliNavbar } from "@/components/cli-navbar"
 import { ThreeBackground } from "@/components/three-background"
-import { LandingHero } from "@/components/landing-hero"
 import { timelinePosts } from "@/data/timelinePosts"
-import Image from "next/image"
-import { ArrowLeft } from "lucide-react"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+function LocalImage({ weekNumber, srcFallback, idx }: { weekNumber: number; srcFallback: string; idx: number }) {
+  const exts = ["jpg", "jpeg", "png", "webp", "svg"]
+  const [attempt, setAttempt] = useState(0)
+  // Build candidate list. If srcFallback is already a local timeline path, try it first
+  const localCandidates = exts.map((e) => `/images/timeline/${weekNumber}-${idx}.${e}`)
+  const isSrcLocal = srcFallback && srcFallback.startsWith("/images/timeline/")
+  const candidates = isSrcLocal ? [srcFallback, ...localCandidates, "/placeholder.jpg"] : [...localCandidates, srcFallback, "/placeholder.jpg"]
+  const current = candidates[Math.min(attempt, candidates.length - 1)]
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={current}
+      alt={`Progress update image ${idx + 1}`}
+      loading="lazy"
+      decoding="async"
+      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+      onError={() => setAttempt((a: number) => a + 1)}
+    />
+  )
+}
 
 export default function DrishtikonTimelinePage() {
   return (
@@ -16,72 +36,42 @@ export default function DrishtikonTimelinePage() {
       <CliNavbar />
 
       <main className="relative z-10 container mx-auto px-4 pt-24 pb-16 max-w-4xl">
-        {/* Back Button */}
         <div className="mb-8">
-          <Button asChild variant="outline" className="font-mono bg-transparent">
-            <Link href="/projects">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Projects
-            </Link>
-          </Button>
-        </div>
+          <div className="space-y-8">
+            {timelinePosts.map((post, postIndex) => {
+              // prefer explicit post.id (week number) if available, otherwise derive from index
+              const weekNumber = typeof post.id === "number" ? post.id : postIndex + 1
 
-        {/* Terminal prompt */}
-        <div className="mb-8 text-sm font-mono text-muted-foreground">
-          <span className="text-primary font-semibold">student@projukti-lipi</span>
-          <span>:</span>
-          <span className="text-accent font-semibold">~/timeline/drishtikon</span>
-          <span>$</span>
-          <span className="ml-2">cat progress.log</span>
-        </div>
-
-        <div className="mb-12">
-          <LandingHero title="DRISHTIKON Timeline" subtitle="Progress updates from the humanoid endoskeleton project" commandText="cat progress.log" showImmediately={true} ctaHref="/timeline/drishtikon" ctaText="See Updates" />
-        </div>
-
-        {/* Timeline Posts */}
-        <div className="space-y-8">
-          {timelinePosts.map((post) => (
-            <article
-              key={post.id}
-              className="border-2 border-primary/30 rounded-lg bg-card/90 backdrop-blur-sm p-6 shadow-lg hover:border-primary/50 transition-all duration-300"
-            >
-              {/* Post Header */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/50">
-                  <Image src={post.profileImage || "/placeholder.svg"} alt={post.name} fill className="object-cover" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground">{post.name}</h3>
-                  <p className="text-sm text-muted-foreground font-mono">{post.day} ago</p>
-                </div>
-              </div>
-
-              {/* Post Description */}
-              <div className="mb-4 text-foreground/90 whitespace-pre-line leading-relaxed">{post.description}</div>
-
-              {/* Post Images */}
-              {post.images.length > 0 && (
-                <div className="grid grid-cols-2 gap-2 mt-4">
-                  {post.images.map((image, idx) => (
-                    <div
-                      key={idx}
-                      className={`relative overflow-hidden rounded-lg border border-border ${
-                        post.images.length === 1 ? "col-span-2 h-96" : "h-48"
-                      }`}
-                    >
-                      <Image
-                        src={image || "/placeholder.svg"}
-                        alt={`Progress update image ${idx + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
+              return (
+                <article key={post.id ?? postIndex} className="p-6 bg-card/80 rounded-lg border border-border">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold">{post.name}</h3>
+                      <p className="text-sm text-foreground/80">Week {weekNumber} • {post.day}</p>
                     </div>
-                  ))}
-                </div>
-              )}
-            </article>
-          ))}
+                  </div>
+
+                  <div className="mt-4 text-foreground/90 whitespace-pre-wrap">{post.description}</div>
+
+                  {/* Post Images */}
+                  {post.images && post.images.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2 mt-4">
+                      {post.images.map((image, idx) => (
+                        <div
+                          key={idx}
+                          className={`overflow-hidden rounded-lg border border-border ${
+                            post.images.length === 1 ? "col-span-2 h-96" : "h-48"
+                          }`}
+                        >
+                          <LocalImage weekNumber={weekNumber} srcFallback={image} idx={idx} />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              )
+            })}
+          </div>
         </div>
 
         {/* Footer CTA */}

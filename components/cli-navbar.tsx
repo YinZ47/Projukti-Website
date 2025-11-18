@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Terminal, Linkedin } from "lucide-react"
+import ThemeToggle from "./theme-toggle"
 
 export function CliNavbar() {
   const pathname = usePathname()
@@ -56,6 +57,10 @@ export function CliNavbar() {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
+              {/* Theme toggle embedded in the cli-navbar so it is always visible and above header content */}
+              <div className="ml-3">
+                <ThemeToggle embedded />
+              </div>
             </div>
           </div>
         </div>

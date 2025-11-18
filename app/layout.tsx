@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`font-mono ${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+  <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Footer />
       </body>
     </html>

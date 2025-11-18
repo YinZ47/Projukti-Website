@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ThemeToggle } from "./theme-toggle"
+import ThemeToggle from "./theme-toggle"
 import { cn } from "@/lib/utils"
 
 export function Navbar() {
@@ -73,7 +73,12 @@ export function Navbar() {
             </button>
           ))}
 
-          <ThemeToggle />
+          <div className="relative z-60">
+            {/* embed the toggle inside navbar so it won't be overlapped; hidden on very small screens */}
+            <div className="-mr-2">
+              <ThemeToggle embedded />
+            </div>
+          </div>
         </div>
       </nav>
     </header>

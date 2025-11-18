@@ -8,6 +8,8 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    // allow loading LinkedIn-hosted images used in timeline posts
+    domains: ["media.licdn.com"],
   },
 }
 

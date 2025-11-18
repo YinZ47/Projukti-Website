@@ -85,6 +85,11 @@
   }
 }
 
+/* Smooth theme color transitions */
+html, body {
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
 @keyframes blink {
   0%,
   50% {
@@ -114,4 +119,40 @@
   border-radius: 9999px;
   background: rgba(99,102,241,0.18);
   backdrop-filter: blur(6px);
+}
+
+/* Basic dark theme overrides. These are intentionally simple; you can replace values later with exact color tokens. */
+.dark {
+  --background: oklch(0.08 0.01 28);
+  --foreground: oklch(0.96 0.02 300);
+  --card: oklch(0.12 0.01 28);
+  --card-foreground: oklch(0.96 0.02 300);
+  --popover: oklch(0.10 0.01 28);
+  --popover-foreground: oklch(0.96 0.02 300);
+  --primary: oklch(0.62 0.18 250);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --secondary: oklch(0.18 0.02 260);
+  --secondary-foreground: oklch(0.96 0.02 300);
+  --muted: oklch(0.14 0.01 28);
+  --muted-foreground: oklch(0.65 0.02 290);
+  --accent: oklch(0.7 0.05 260);
+  --accent-foreground: oklch(0.98 0.01 90);
+  --destructive: oklch(0.08 0.02 20);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.14 0.01 28);
+  --input: oklch(0.12 0.01 28);
+  --ring: oklch(0.62 0.18 250);
+  --chart-1: oklch(0.6 0.03 260);
+  --chart-2: oklch(0.5 0.03 260);
+  --chart-3: oklch(0.4 0.03 260);
+  --chart-4: oklch(0.3 0.03 260);
+  --chart-5: oklch(0.2 0.03 260);
+  --sidebar: oklch(0.10 0.01 28);
+  --sidebar-foreground: oklch(0.96 0.02 300);
+  --sidebar-primary: oklch(0.62 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --sidebar-accent: oklch(0.18 0.02 260);
+  --sidebar-accent-foreground: oklch(0.96 0.02 300);
+  --sidebar-border: oklch(0.14 0.01 28);
+  --sidebar-ring: oklch(0.62 0.18 250);
 }
