@@ -89,7 +89,7 @@ Ahnaf Ashique Adi, Mahir Dyan, Sadman Labib Eram
 With passion, precision, and collaboration, Drishtikon is steadily moving from vision to reality.
 #ProjuktiLipi #Drishtikon #Robotics #Innovation`,
     images: [
-      "/images/timeline/3-0.jpeg",
+      "/images/timeline/3-0.jpg",
       "/images/timeline/3-1.jpeg",
       "/images/timeline/3-2.jpeg",
       "/images/timeline/3-3.jpeg",
