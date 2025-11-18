@@ -1,10 +1,12 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useTheme } from "next-themes"
 
 export function BackgroundAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const followerRef = useRef<HTMLDivElement>(null)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -37,13 +39,14 @@ export function BackgroundAnimation() {
       })
     }
 
-    const isDark = document.documentElement.classList.contains("dark")
-  let cursorX = -9999
-  let cursorY = -9999
+    let cursorX = -9999
+    let cursorY = -9999
 
     function animate() {
       if (!ctx || !canvas) return
 
+      const isDark = resolvedTheme === "dark"
+      
       ctx.fillStyle = isDark ? "rgba(18, 18, 25, 0.05)" : "rgba(245, 242, 235, 0.05)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -87,8 +90,12 @@ export function BackgroundAnimation() {
     window.addEventListener("resize", handleResize)
     window.addEventListener("mousemove", handleMove)
     window.addEventListener("mouseleave", handleLeave)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("mousemove", handleMove)
+      window.removeEventListener("mouseleave", handleLeave)
+    }
+  }, [resolvedTheme])
 
   return (
     <>

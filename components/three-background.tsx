@@ -5,7 +5,7 @@ import { useTheme } from "next-themes"
 
 export function ThreeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -54,9 +54,10 @@ export function ThreeBackground() {
       }
 
       draw() {
+        const isDark = resolvedTheme === "dark"
         const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 3)
-        gradient.addColorStop(0, theme === "dark" ? "rgba(0, 255, 255, 0.9)" : "rgba(100, 150, 120, 0.5)")
-        gradient.addColorStop(0.5, theme === "dark" ? "rgba(0, 255, 255, 0.4)" : "rgba(100, 150, 120, 0.3)")
+        gradient.addColorStop(0, isDark ? "rgba(0, 255, 255, 0.9)" : "rgba(100, 150, 120, 0.5)")
+        gradient.addColorStop(0.5, isDark ? "rgba(0, 255, 255, 0.4)" : "rgba(100, 150, 120, 0.3)")
         gradient.addColorStop(1, "rgba(0, 255, 255, 0)")
 
         ctx.fillStyle = gradient
@@ -82,8 +83,9 @@ export function ThreeBackground() {
       }
 
       draw(t: number) {
+        const isDark = resolvedTheme === "dark"
         ctx.beginPath()
-        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.25)" : "rgba(100, 150, 120, 0.2)"
+        ctx.strokeStyle = isDark ? "rgba(0, 255, 255, 0.25)" : "rgba(100, 150, 120, 0.2)"
         ctx.lineWidth = 2
 
         for (let x = 0; x < canvas.width; x += 5) {
@@ -130,6 +132,7 @@ export function ThreeBackground() {
       }
 
       draw() {
+        const isDark = resolvedTheme === "dark"
         ctx.save()
         ctx.translate(this.x, this.y)
         ctx.rotate(this.rotation)
@@ -147,7 +150,7 @@ export function ThreeBackground() {
         }
         ctx.closePath()
 
-        ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.15)"
+        ctx.strokeStyle = isDark ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.15)"
         ctx.lineWidth = 1.5
         ctx.stroke()
 
@@ -176,8 +179,9 @@ export function ThreeBackground() {
     const animate = () => {
       time += 0.01
 
+      const isDark = resolvedTheme === "dark"
       // Clear with fade effect
-      ctx.fillStyle = theme === "dark" ? "rgba(13, 13, 13, 0.08)" : "rgba(250, 248, 245, 0.05)"
+      ctx.fillStyle = isDark ? "rgba(13, 13, 13, 0.08)" : "rgba(250, 248, 245, 0.05)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Draw waves
@@ -196,7 +200,7 @@ export function ThreeBackground() {
       })
 
       // Draw connections between nearby orbs
-      ctx.strokeStyle = theme === "dark" ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.1)"
+      ctx.strokeStyle = isDark ? "rgba(0, 255, 255, 0.15)" : "rgba(100, 150, 120, 0.1)"
       ctx.lineWidth = 1
 
       for (let i = 0; i < orbs.length; i++) {
@@ -223,7 +227,7 @@ export function ThreeBackground() {
       window.removeEventListener("resize", resizeCanvas)
       cancelAnimationFrame(animationId)
     }
-  }, [theme])
+  }, [resolvedTheme])
 
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none opacity-40" style={{ zIndex: 0 }} />
 }

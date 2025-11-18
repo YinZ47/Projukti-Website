@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import { Suspense } from "react"
 import { Footer } from "@/components/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const inter = Inter({
@@ -28,30 +29,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('site-theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var initialTheme = theme || (prefersDark ? 'dark' : 'light');
-                  if (initialTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`font-mono ${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
-  <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
