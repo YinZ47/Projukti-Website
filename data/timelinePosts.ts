@@ -35,10 +35,10 @@ Every step brings Drishtikon closer to a system that can genuinely connect and e
 
 #ProjuktiLipi #Drishtikon #Robotics #Innovation`,
     images: [
-      "https://media.licdn.com/dms/image/v2/D4D22AQEYRXaWjIZBHg/feedshare-shrink_2048_1536/B4DZkfC7STGgAw-/0/1757162489071?e=1761782400&v=beta&t=y6cB1CE-JE-_2qqLec_AVXK99-BSF0wTKI0e_w35qpk",
-      "https://media.licdn.com/dms/image/v2/D4D22AQH96X0or_epfg/feedshare-shrink_2048_1536/B4DZkfC7RfG8Aw-/0/1757162489440?e=1761782400&v=beta&t=M-VJAEgI_SypIO5p3CvDpv77tKRHONvZRAMTz6PxnHs",
-      "https://media.licdn.com/dms/image/v2/D4D22AQGmw8YGytuFGw/feedshare-shrink_1280/B4DZkfC7SpJMAs-/0/1757162488970?e=1761782400&v=beta&t=VT8U22zA1DojcKpiSVNuVI60OaF5rnCGhY4AC3wGBns",
-      "https://media.licdn.com/dms/image/v2/D4D22AQFgoRiEhTwxWw/feedshare-shrink_1280/B4DZkfC7SeJgAs-/0/1757162488760?e=1761782400&v=beta&t=P-z5vmGBBClY4OZMSxvsscAhgzndB4kDc1o0EvWxg50",
+      "/images/timeline/1-0.jpg",
+      "/images/timeline/1-1.jpeg",
+      "/images/timeline/1-2.jpeg",
+      "/images/timeline/1-3.jpeg",
     ],
   },
   {
